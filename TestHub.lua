@@ -20,7 +20,7 @@ end
 
 function autoHatch()
     while getgenv().autoHatch == true do
-        game:GetService("ReplicatedStorage").Events.HatchEgg:InvokeServer({},getgenv().chooseEgg,4)
+        game:GetService("ReplicatedStorage").Events.HatchEgg:InvokeServer({},getgenv().chooseEgg,1)
         wait(.00000000000000000000000000000000000000000000000001)
     end
 end
@@ -56,6 +56,5 @@ end)
 
 
 local Dropdown = Section:CreateDropdown('Choose Egg', {'Starter', 'Wood Egg', 'Jungle Egg', 'Forest Egg', 'Bee Egg', 'Swamp Egg', 'Snow Egg', 'Desert Egg', 'Death Egg', 'Beach Egg', 'Dominus Egg', 'Mine Egg', 'Cloud Egg', 'Coral Egg', 'Dark Egg', 'Fire Egg', 'Underworld Egg', 'Molten Egg', 'Magma Egg', 'Blue Magma Egg', 'Secret Magma Egg', 'Bone Egg', 'Purple Magma Egg', 'Yellow Magma Egg', 'Red Magma'}, 0.25, function(Value)
-    getgenv().autoHatch = Value
-    print("You selected"..tostring(getgenv().chooseEgg))
+    getgenv().chooseEgg = Value
 end)
